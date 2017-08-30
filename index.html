@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="css/lightbox.min.css">
 <style>
     body,
     h1 {
@@ -30,6 +31,18 @@
     .super-strong {
         font-weight: bolder;
     }
+    
+    .nobg {
+        background-color: transparent;
+    }
+    
+    .sidebar-image {
+        width: 100%;
+    }
+    
+    .w3-button {
+        background-color: rgba(255, 255, 255, 0.3);
+    }
 </style>
 
 <body>
@@ -49,10 +62,29 @@
                 <img class="logo-mini" src="images/octocat.png">
             </a>
         </div>
+
+        <div class="w3-sidebar w3-bar-block nobg" style="width:15%;right:0">
+            <a href="images/everyone.jpg" class="w3-bar-item w3-button" data-lightbox="pictures" data-title="Our Bridal Party">
+                <img class="sidebar-image" src="images/everyone.jpg">
+            </a>
+            <a href="images/the_kiss.jpg" class="w3-bar-item w3-button" data-lightbox="pictures" data-title="The Kiss!">
+                <img class="sidebar-image" src="images/the_kiss.jpg">
+            </a>
+            <a href="images/cake_yum.jpg" class="w3-bar-item w3-button" data-lightbox="pictures" data-title="Yum!">
+                <img class="sidebar-image" src="images/cake_yum.jpg">
+            </a>
+            <a href="images/shoes.jpg" class="w3-bar-item w3-button" data-lightbox="pictures" data-title="Shoe Game!  ...Focus...">
+                <img class="sidebar-image" src="images/shoes.jpg">
+            </a>
+            <a href="images/kiss.jpg" class="w3-bar-item w3-button" data-lightbox="pictures" data-title="The Best Kiss">
+                <img class="sidebar-image" src="images/kiss.jpg">
+            </a>
+        </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script type="text/javascript" src="js/jquery.countdown.min.js"></script>
+    <script type="text/javascript" src="js/lightbox.js"></script>
     <script type="text/javascript">
         var today = new Date();
         var year = today.getFullYear();
@@ -69,6 +101,12 @@
             .countdown(anno, function(event) {
                 $(this).text(event.strftime('%D days, %H hours, %M minutes, and %S Seconds until the next #Quillenium'));
             });
+
+
+        // $('.sidebar-image').click(function(evt) {
+        //     var src = $(evt.target).attr('src');
+        //     $('.bgimg').css('background-image', 'url(' + src + ')');
+        // });
     </script>
 </body>
 
